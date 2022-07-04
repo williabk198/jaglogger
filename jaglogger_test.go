@@ -196,7 +196,7 @@ func Test_logger_Critical(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetCriticalLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[CRITICAL\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[CRITICAL\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -225,7 +225,7 @@ func Test_logger_Criticalf(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetCriticalLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[CRITICAL\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[CRITICAL\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -253,7 +253,7 @@ func Test_logger_Error(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetErrorLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[ERROR\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[ERROR\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -282,7 +282,7 @@ func Test_logger_Errorf(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetErrorLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[ERROR\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[ERROR\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -310,7 +310,7 @@ func Test_logger_Warning(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetWarningLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[WARNING\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[WARNING\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -339,7 +339,7 @@ func Test_logger_Warningf(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetWarningLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[WARNING\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[WARNING\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -367,7 +367,7 @@ func Test_logger_Notice(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetNoticeLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[NOTICE\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[NOTICE\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -396,7 +396,7 @@ func Test_logger_Noticef(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetNoticeLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[NOTICE\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[NOTICE\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -424,7 +424,7 @@ func Test_logger_Info(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetInfoLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[INFO\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[INFO\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -453,7 +453,7 @@ func Test_logger_Infof(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetInfoLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[INFO\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[INFO\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -481,7 +481,7 @@ func Test_logger_Debug(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetDebugLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[DEBUG\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[DEBUG\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
@@ -510,7 +510,7 @@ func Test_logger_Debugf(t *testing.T) {
 			name:      "Test Output",
 			l:         NewLogger(LogLevelCritical, SetDebugLoggerOpt(Config{Outputs: []io.Writer{loggerOutput}})),
 			args:      args{format: "test %s", v: []any{"test"}},
-			wantMatch: regexp.MustCompile(`^\[DEBUG\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/log_test\.go\:\d*\:\stest\stest\n$`),
+			wantMatch: regexp.MustCompile(`^\[DEBUG\]\d{4}\/\d{2}\/\d{2}\s\d{2}\:\d{2}\:\d{2}\s.*\/jaglogger_test\.go\:\d*\:\stest\stest\n$`),
 		},
 	}
 	for _, tt := range tests {
