@@ -72,8 +72,8 @@ if err != nil {
 jaglogger.NewLogger(
   jaglogger.LogLevelInfo,
   SetErrorLoggerOpt(
-    jaglogger.Config{Outputs: []io.Writer{file, os.Stderr}}
-  )
+    jaglogger.Config{Outputs: []io.Writer{file, os.Stderr}},
+  ),
 )
 ```
 Yep, it's really that simple. As long as where you need to write to implements the `io.Writer` interface,
@@ -100,8 +100,8 @@ if err != nil {
 
 logger := jaglogger.NewLogger(
   jaglogger.LogLevelInfo,
-  jaglogger.SetDefaultNonErrorOutputsOpt([]io.Writer{logFile})
-  jaglogger.SetDefaultErrorOutputsOpt([]io.Witer{errLogFile})
+  jaglogger.SetDefaultNonErrorOutputsOpt([]io.Writer{logFile}),
+  jaglogger.SetDefaultErrorOutputsOpt([]io.Witer{errLogFile}),
   jaglogger.SetDefaultFlagsOpt(log.LstdFlags),
 )
 ```
