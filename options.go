@@ -2,7 +2,7 @@ package jaglogger
 
 import "io"
 
-// Config holds the data that will be used to build the logger of a specfic log level.
+// Config holds the data that will be used to build the logger of a specific log level.
 type Config struct {
 	Outputs []io.Writer
 	Prefix  string
