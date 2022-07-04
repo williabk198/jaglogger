@@ -1,3 +1,8 @@
+[![go.mod](https://img.shields.io/github/go-mod/go-version/williabk198/jaglogger)](go.mod)
+[![go report](https://goreportcard.com/badge/github.com/williabk198/jaglogger)](https://goreportcard.com/report/github.com/williabk198/jaglogger)
+[![test status](https://github.com/williabk198/jaglogger/workflows/test/badge.svg)](https://github.com/williabk198/jaglogger/actions)
+[![LICENSE](https://img.shields.io/github/license/williabk198/jaglogger)](LICENSE) 
+
 # Just Another Go(JAG) Logger
 JAG Logger is built on top of Go's existing `log` package, 
 and aims to provide a simple and extensible solution for your logging needs.
